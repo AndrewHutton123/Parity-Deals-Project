@@ -24,7 +24,7 @@ export const ProductTable = pgTable(
   "products",
   {
     id: uuid("id").primaryKey().defaultRandom(),
-    clearkUserId: text("cleark_user_id").notNull(),
+    clerkUserId: text("cleark_user_id").notNull(),
     name: text("name").notNull(),
     description: text("description"),
     url: text("url").notNull(),
@@ -33,7 +33,7 @@ export const ProductTable = pgTable(
   },
   (table) => ({
     clerkUserIdIndex: index("products.cleark_user_id_index").on(
-      table.clearkUserId
+      table.clerkUserId
     ),
   })
 );
